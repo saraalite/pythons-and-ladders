@@ -1,6 +1,9 @@
 from SnakesAndLadders.Game.Game import Game
 from SnakesAndLadders.PrintGameWrapper.PrintGameWrapper import PrintGameWrapper
+from SnakesAndLadders.Game.Dice.Dice import Dice
 
-game = Game()
+print(Dice.roll())
 
-PrintGameWrapper.print_game(game)
+# game = Game(num_of_players=2)
+
+# PrintGameWrapper.print_game(game)

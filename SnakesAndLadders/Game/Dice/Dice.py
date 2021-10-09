@@ -1,4 +1,8 @@
+import random
+from .DiceValues.DiceValues import DiceValues
+
+
 class Dice:
     @staticmethod
     def roll() -> int:
-        return 5
+        return random.choice(list(DiceValues)).value

@@ -6,10 +6,10 @@ class PrintGameWrapper:
     @staticmethod
     def print_game(game: Game):
         board_height_in_squares = (
-            game.get_board().get_board_design().BOARD_HEIGHT_IN_SQUARES
+            game.get_board().get_board_design().get_board_height_in_squares()
         )
         board_width_in_squares = (
-            game.get_board().get_board_design().BOARD_WIDTH_IN_SQUARES
+            game.get_board().get_board_design().get_board_width_in_squares()
         )
 
         PrintGameWrapper.print_bottom(board_width_in_squares)
@@ -20,23 +20,6 @@ class PrintGameWrapper:
                 squareY, board_width_in_squares, board_height_in_squares, game
             )
             PrintGameWrapper.print_bottom(board_width_in_squares)
-
-    @staticmethod
-    def players_token_is_in_position(position: int, player_list: "list[Player]"):
-        players_string = ""
-        for player in player_list:
-            if player.get_player_token_position() == position:
-                players_string += f"P{player.get_position_in_player_list()}"
-        return players_string
-
-    @staticmethod
-    def print_bottom(board_width_in_squares):
-        for squareX in range(1, board_width_in_squares + 1):
-            print("--------", end="")
-        print()
-
-    def print_side():
-        print("|", end="")
 
     @staticmethod
     def print_row_with_content(
@@ -60,6 +43,23 @@ class PrintGameWrapper:
             )
             print("   |", end="")
         print()
+
+    @staticmethod
+    def players_token_is_in_position(position: int, player_list: "list[Player]"):
+        players_string = ""
+        for player in player_list:
+            if player.get_player_token_position() == position:
+                players_string += f"P{player.get_position_in_player_list()}"
+        return players_string
+
+    @staticmethod
+    def print_bottom(board_width_in_squares):
+        for squareX in range(1, board_width_in_squares + 1):
+            print("--------", end="")
+        print()
+
+    def print_side():
+        print("|", end="")
 
     @staticmethod
     def get_position_in_list_based_on_board_design(

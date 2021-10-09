@@ -29,6 +29,8 @@ class Player:
 
     def update_is_winner(self, is_winner):
         self.is_winner = is_winner
+        # if get_player_token_position is 100 then self.is_winner=true
 
     def update_player_token_position(self, new_token_position):
         self.player_token_position = new_token_position
+        # guardar posición anterior y sumar resultado del dado (?)
