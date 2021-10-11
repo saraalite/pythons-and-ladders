@@ -1,4 +1,4 @@
-# 🐍 Welcome to Pythons and Ladders! 🪜
+# 🐍 Welcome to Pythons and Ladders!
 
 💻 This project is the backend of Snakes and Ladders classic boardgame, developed in Python.
 The logic of the game is developed as object oriented.
