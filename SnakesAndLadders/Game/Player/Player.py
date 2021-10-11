@@ -1,8 +1,7 @@
 class Player:
-    def __init__(self, position_in_player_list):
+    def __init__(self):
         self.last_dice_result: int = None
         self.last_turn_played: int = 0
-        self.position_in_player_list: int = position_in_player_list
         self.is_winner: bool = False
         self.player_token_position: int = 1
 
@@ -11,9 +10,6 @@ class Player:
 
     def get_last_turn_played(self) -> int:
         return self.last_turn_played
-
-    def get_position_in_player_list(self) -> int:
-        return self.position_in_player_list
 
     def get_is_winner(self) -> bool:
         return self.is_winner
@@ -29,8 +25,7 @@ class Player:
 
     def update_is_winner(self, is_winner):
         self.is_winner = is_winner
-        # if get_player_token_position is 100 then self.is_winner=true
 
     def update_player_token_position(self, new_token_position):
         self.player_token_position = new_token_position
-        # guardar posición anterior y sumar resultado del dado (?)
+        self.update_last_turn_played(self.get_last_turn_played() + 1)

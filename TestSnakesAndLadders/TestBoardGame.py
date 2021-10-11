@@ -62,6 +62,6 @@ def test_us_3_uat_1_dice_result_between_1_and_6(game: Game):
 def test_us_3_uat_2_dice_rolls_4_and_token_moves_4_spaces(game: Game):
     player = game.get_player_list()[0]
     initial_position = player.get_player_token_position()
-    game.move_next_player(dice_result=DiceValues.FOUR)
+    game.move_next_player(dice_result=DiceValues.FOUR.value)
 
-    assert player.get_player_token_position() == initial_position + 4
+    assert player.get_player_token_position() == (initial_position + 4)
